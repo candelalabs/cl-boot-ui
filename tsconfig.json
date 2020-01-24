@@ -1,0 +1,28 @@
+{
+	"compileOnSave": false,
+	"name": "cl-boot-ui",
+	"compilerOptions": {
+		"suppressExcessPropertyErrors": true,
+		"declaration": true,
+		"outDir": "@types",
+		"target": "es5",
+		"strictNullChecks": false,
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"jsx": "react",
+		"baseUrl": ".",
+		"paths": {
+			"cl-boot-ui": ["src/main.ts"]
+		},
+		"lib": [
+			"dom",
+			"es2015"
+		]
+	},
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts",
+		"./dist",
+		"./tests"
+	]
+}
