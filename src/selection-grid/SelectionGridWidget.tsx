@@ -4,10 +4,13 @@ import { BaseWidget, BaseWidgetProps } from "../common/BaseWidget";
 import { Toolkit } from "../Toolkit";
 import { BaseMouseAction } from "../common/actions/BaseMouseAction";
 
+import SelectionGridCard from "./SelectionGridCard";
+
 export interface SelectionGridItem {
 	id?: string,
 	imageSrc: string,
 	title: string,
+	amount?: string,
 	moved?: boolean,
 	initialX?: number,
 	initialY?: number,
@@ -153,11 +156,7 @@ export class SelectionGridWidget extends BaseWidget<SelectionGridProps, Selectio
 						this.props.data.map((item)=>{
 							if(item.moved || item.selected) return null;
 							return (
-								<div className="selection-grid-card noselect" data-id={item.id}>
-									<img src={item.imageSrc} className="nodrag"/>
-									<br/>
-									<label>{item.title}</label>
-								</div>
+								<SelectionGridCard item={item} />
 							)
 						})
 					}
@@ -174,11 +173,7 @@ export class SelectionGridWidget extends BaseWidget<SelectionGridProps, Selectio
 						this.props.data.map((item)=>{
 							if(item.moved || !item.selected) return null;
 							return (
-								<div className="selection-grid-card noselect" data-id={item.id}>
-									<img src={item.imageSrc} className="nodrag"/>
-									<br/>
-									<label>{item.title}</label>
-								</div>
+								<SelectionGridCard item={item} />
 							)
 						})
 					}
@@ -195,15 +190,11 @@ export class SelectionGridWidget extends BaseWidget<SelectionGridProps, Selectio
 					this.props.data.map((item)=>{
 						if(!item.moved) return null;
 						else return (
-							<div className="selection-grid-card noselect" data-id={item.id} style={{
+							<SelectionGridCard item={item} style={{
 								position: "absolute",
 								left: item.moveX,
 								top: item.moveY,
-							}}>
-								<img src={item.imageSrc} className="nodrag"/>
-								<br/>
-								<label>{item.title}</label>
-							</div>
+							}}/>
 						)
 					})
 				}
