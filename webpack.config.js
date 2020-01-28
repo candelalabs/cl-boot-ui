@@ -14,9 +14,6 @@ if (production) {
 	);
 }
 
-/**
- * @author Dylan Vorster
- */
 module.exports =
 	//for building the umd distribution
 	{

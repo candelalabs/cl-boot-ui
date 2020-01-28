@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github } from 'react-syntax-highlighter/styles/hljs';
 
 /**
+ * Based on storm-react-diagram codes
  * @author Dylan
  *
  * Simple little addon for displaying code, might make this a seperate project at some point

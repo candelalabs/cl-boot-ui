@@ -1,6 +1,7 @@
 // tslint:disable no-bitwise
 import closest = require("closest");
 /**
+ * Based on storm-react-diagram codes
  * @author Dylan Vorster
  */
 export class Toolkit {

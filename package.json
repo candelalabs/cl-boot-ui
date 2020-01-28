@@ -8,7 +8,7 @@
     "bootstrap"
   ],
   "main": "./dist/main.js",
-  "typings": "./dist/@types/src/main",
+  "typings": "./@types/src/main",
   "author": "arifnpm",
   "files": [
     "dist"
