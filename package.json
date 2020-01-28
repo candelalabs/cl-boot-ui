@@ -11,7 +11,8 @@
   "typings": "./@types/src/main",
   "author": "arifnpm",
   "files": [
-    "dist"
+    "dist",
+    "@types"
   ],
   "scripts": {
     "build:ts": "webpack",
