@@ -1,151 +1,166 @@
-.sb-show-main > #root > div {
-	background-color: #777;
+.sb-show-main>#root>div {
+    background-color: #777;
 }
 
 .noselect {
-	-webkit-touch-callout: none; /* iOS Safari */
-	  -webkit-user-select: none; /* Safari */
-	   -khtml-user-select: none; /* Konqueror HTML */
-		 -moz-user-select: none; /* Old versions of Firefox */
-		  -ms-user-select: none; /* Internet Explorer/Edge */
-			  user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
 									supported by Chrome, Opera and Firefox */
 }
 
 .nodrag {
-	-webkit-user-drag: none;
-	-khtml-user-drag: none;
-	-moz-user-drag: none;
-	-o-user-drag: none;
-	user-drag: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 .selection-grid-container {
-	width: 955px;
-	height: 427px;
-	border-radius: 8px;
-	background-color: #ffffff;
-	padding: 15px;
-	position: relative;
+    width: 955px;
+    height: 427px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 15px;
+    position: relative;
 }
 
 .selection-grid-menu-title {
-	width: 249px;
-	height: 19px;
-	font-family: 'Muli', sans-serif;
-	font-size: 15px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #4b4b4b;
+    width: 249px;
+    height: 19px;
+    font-family: 'Muli', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
 }
+
 .selection-grid-menu {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
+
 .selection-grid-card {
-	width: 141px;
-	height: 97.3px;
-	border-radius: 7.3px;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
-	background-color: #f6f6f6;
-	margin-right: 15px;
-	margin-bottom: 12px;
-	box-sizing: border-box;
-	text-align: center;
-	padding-top: 13px;
+    width: 141px;
+    height: 97.3px;
+    border-radius: 7.3px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f6f6f6;
+    margin-right: 15px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 13px;
 }
 
 
 .selection-grid-card label {
-	margin-top: 7px;
-	display: inline-block;
-	width: 100px;
-	height: 26.7px;
-	font-family: 'Muli', sans-serif;
-	font-size: 12px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: 1.11;
-	letter-spacing: normal;
-	text-align: center;
-	color: #30308b;
+    margin-top: 7px;
+    display: inline-block;
+    width: 100px;
+    height: 26.7px;
+    font-family: 'Muli', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    text-align: center;
+    color: #30308b;
 }
 
 .selection-grid-selected-title {
-	width: 107px;
-	height: 19px;
-	font-family: Muli;
-	font-size: 15px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #4b4b4b;
+    width: 107px;
+    height: 19px;
+    font-family: Muli;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
 }
+
 .selection-grid-selected {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
+
 .selection-grid-placeholder {
-	width: 142px;
-	height: 97.9px;
-	border-radius: 7.3px;
-	border: dashed 0.9px #B6B6B6;
-	margin-right: 15px;
-	margin-bottom: 12px;
-	position: relative;
+    width: 142px;
+    height: 97.9px;
+    border-radius: 7.3px;
+    border: dashed 0.9px #B6B6B6;
+    margin-right: 15px;
+    margin-bottom: 12px;
+    position: relative;
 }
+
 .hover .selection-grid-placeholder {
-	border-color: #8852c6;
+    border-color: #8852c6;
 }
+
 .selection-grid-placeholder label {
-	width: 27px;
-	height: 28px;
-	font-family: Muli;
-	font-size: 22px;
-	font-weight: 800;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #d0d0d0;
-	line-height: 22px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -12px;
-	margin-left: -12px;
+    width: 27px;
+    height: 28px;
+    font-family: Muli;
+    font-size: 22px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #d0d0d0;
+    line-height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
 }
+
 .hover .selection-grid-placeholder label {
-	color: #8852c6;
+    color: #8852c6;
 }
 
 .selection-pane-container {
-	border-radius: 8px;
-	background-color: #ffffff;
-	padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 15px;
 }
 
 .selection-button {
-	border-radius: 3px;
-	border: solid 0.7px #8852c6;
-	margin-right: 15px;
-	color: #8852c6;
-	padding: 10px 17px;
-	cursor: pointer;
-	
-	font-family: Muli;
-	font-size: 13px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
+    border-radius: 3px;
+    border: solid 0.7px #8852c6;
+    margin-right: 15px;
+    color: #8852c6;
+    padding: 10px 17px;
+    cursor: pointer;
+
+    font-family: Muli;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
 }
+
+@import './login.scss'

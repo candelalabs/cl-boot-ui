@@ -202,7 +202,7 @@ export class SelectionGridWidget extends BaseWidget<SelectionGridProps, Selectio
 							}}>
 								<img src={item.imageSrc} className="nodrag"/>
 								<br/>
-								<label>{item.title}</label>
+								<label>{item.title} xyz</label>
 							</div>
 						)
 					})

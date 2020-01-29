@@ -25,7 +25,7 @@ module.exports = {
 				loader: 'awesome-typescript-loader?declaration=false',
 			},
 			{
-				test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+				test: /\.(woff|woff2|eot|ttf|otf|svg|jpg)$/,
 				loader: "file-loader"
 			}
 		]

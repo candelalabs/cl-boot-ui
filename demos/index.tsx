@@ -44,5 +44,16 @@ storiesOf("Selection Pane", module)
 		)
 	);
 
+
+storiesOf("Login Module", module)
+	.add(
+		"Login",
+		Helper.makeDemo(
+			require("./login/index").default(),
+			require("!!raw-loader!./login/index"),
+			require("./login/docs.md").default
+		)
+	);
+
 // enable this to log mouse location when writing new puppeteer tests
 //Helper.logMousePosition()

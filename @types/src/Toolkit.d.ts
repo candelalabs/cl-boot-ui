@@ -1,4 +1,5 @@
 /**
+ * Based on storm-react-diagram codes
  * @author Dylan Vorster
  */
 export declare class Toolkit {

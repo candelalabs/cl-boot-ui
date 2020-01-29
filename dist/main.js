@@ -180,6 +180,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // tslint:disable no-bitwise
 var closest = __webpack_require__(/*! closest */ "./node_modules/closest/index.js");
 /**
+ * Based on storm-react-diagram codes
  * @author Dylan Vorster
  */
 var Toolkit = /** @class */ (function () {
@@ -302,6 +303,68 @@ exports.BaseMouseAction = BaseMouseAction;
 
 /***/ }),
 
+/***/ "./src/login/LoginWidget.tsx":
+/*!***********************************!*\
+  !*** ./src/login/LoginWidget.tsx ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var LoginWidget = /** @class */ (function (_super) {
+    __extends(LoginWidget, _super);
+    function LoginWidget(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {
+            document: null
+        };
+        return _this;
+    }
+    LoginWidget.prototype.render = function () {
+        return (React.createElement("div", { className: "outer" },
+            React.createElement("div", { className: "middle" },
+                React.createElement("div", { className: "inner" },
+                    React.createElement("div", { className: "login-section" },
+                        React.createElement("div", { className: "candela-icon" },
+                            React.createElement("img", { src: this.props.icon, alt: "Logo" }),
+                            React.createElement("div", { className: "custom-text-input" },
+                                React.createElement("input", { type: "text", placeholder: "User Name" })),
+                            React.createElement("div", { className: "custom-text-input" },
+                                React.createElement("input", { type: "password", placeholder: "Password" })),
+                            React.createElement("div", { className: "custom-submit-button", style: {
+                                    marginTop: '60px'
+                                } },
+                                React.createElement("button", null, "Login")),
+                            React.createElement("div", { className: "forgot-password" },
+                                "Forgot Password? ",
+                                React.createElement("a", { style: {
+                                        textDecoration: 'none'
+                                    }, href: "#" }, "click here"))))))));
+    };
+    return LoginWidget;
+}(BaseWidget_1.BaseWidget));
+exports.LoginWidget = LoginWidget;
+
+
+/***/ }),
+
 /***/ "./src/main.ts":
 /*!*********************!*\
   !*** ./src/main.ts ***!
@@ -320,6 +383,7 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./selection-grid/SelectionGridWidget */ "./src/selection-grid/SelectionGridWidget.tsx"));
 __export(__webpack_require__(/*! ./selection-pane/SelectionPaneWidget */ "./src/selection-pane/SelectionPaneWidget.tsx"));
+__export(__webpack_require__(/*! ./login/LoginWidget */ "./src/login/LoginWidget.tsx"));
 
 
 /***/ }),
@@ -492,7 +556,9 @@ var SelectionGridWidget = /** @class */ (function (_super) {
                         } },
                         React.createElement("img", { src: item.imageSrc, className: "nodrag" }),
                         React.createElement("br", null),
-                        React.createElement("label", null, item.title)));
+                        React.createElement("label", null,
+                            item.title,
+                            " xyz")));
             })));
     };
     return SelectionGridWidget;
