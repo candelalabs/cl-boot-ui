@@ -8,7 +8,10 @@ import Svg from "../svg-image/Svg";
 
 export interface SelectionGridCardProps extends BaseWidgetProps {
 	item: SelectionGridItem,
-	style?: any
+	style?: any,
+	onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void,
+	onEditClick?: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void,
+	onDeleteClick?: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void
 }
 
 export interface SelectionGridCardState {
@@ -23,12 +26,12 @@ export default class SelectionGridCard extends BaseWidget<SelectionGridCardProps
 	}
 
 	render() {
-		let { item, style } = this.props;
+		let { item, style, onClick, onEditClick, onDeleteClick } = this.props;
 		if(item.selected) {
 			return (
 				<div className={"selection-grid-card selected"} data-id={item.id} style={style}>
-					<img src="img/group-11.svg" className="edit-image nodrag"/>
-					<img src="img/group-12.svg" className="delete-image nodrag"/>
+					<img src="img/group-11.svg" className="edit-image nodrag" onClick={onEditClick}/>
+					<img src="img/group-12.svg" className="delete-image nodrag" onClick={onDeleteClick}/>
 					<span className="item-amount">{item.amount}</span>
 					<Svg url={item.imageSrc} className="item-image nodrag"/>
 					<span className="item-title">{item.title}</span>
@@ -36,7 +39,7 @@ export default class SelectionGridCard extends BaseWidget<SelectionGridCardProps
 			)
 		} else {
 			return (
-				<div className={"selection-grid-card"} data-id={item.id} style={style}>
+				<div className={"selection-grid-card"} data-id={item.id} style={style} onClick={onClick}>
 					<img src={item.imageSrc} className="item-image nodrag"/>
 					<br/>
 					<label className="item-title">{item.title}</label>
