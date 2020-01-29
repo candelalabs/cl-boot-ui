@@ -66,48 +66,55 @@
     text-align: center;
     padding-top: 13px;
 }
+
 .selection-grid-card.selected {
-	border-radius: 6px;
-	background-image: linear-gradient(to bottom, #5f3390, #2f308b);
-	position: relative;
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom, #5f3390, #2f308b);
+    position: relative;
 }
+
 .selection-grid-card .edit-image {
-	position: absolute;
-	top: 9px;
-	left: 8px;
+    position: absolute;
+    top: 9px;
+    left: 8px;
 }
+
 .selection-grid-card .delete-image {
-	position: absolute;
-	top: 9px;
-	right: 8px;
+    position: absolute;
+    top: 9px;
+    right: 8px;
 }
+
 .selection-grid-card.selected .item-image {
-	position: absolute;
-	bottom: 8px;
-	left: 8px;
-	width: 20px;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    width: 20px;
 }
+
 .selection-grid-card.selected .item-image svg {
-	width: 20px;
-	height: 20px;
+    width: 20px;
+    height: 20px;
 }
+
 .selection-grid-card.selected .item-image path {
-	fill: #fff;
-	stroke: #fff;
+    fill: #fff;
+    stroke: #fff;
 }
+
 .selection-grid-card.selected .item-title {
-	color: #fff;
-	font-family: Muli;
-	font-size: 11px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: 1;
-	letter-spacing: normal;
-	position: absolute;
-	bottom: 10px;
-	left: 32px;
-	height: 20px;
+    color: #fff;
+    font-family: Muli;
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    position: absolute;
+    bottom: 10px;
+    left: 32px;
+    height: 20px;
 }
 
 .selection-grid-card label {
