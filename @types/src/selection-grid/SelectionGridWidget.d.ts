@@ -5,6 +5,7 @@ export interface SelectionGridItem {
     id?: string;
     imageSrc: string;
     title: string;
+    amount?: string;
     moved?: boolean;
     initialX?: number;
     initialY?: number;

@@ -1,1 +1,1 @@
-import "./.helpers/demo.scss";
+import "./scss/demo.scss";
