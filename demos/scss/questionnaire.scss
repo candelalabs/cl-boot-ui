@@ -1,0 +1,66 @@
+.cl-questionnaire {
+	margin-left: 10px;
+	margin-bottom: 15px;
+	width: 880px;
+	border-radius: 8px;
+	background-color: #ffffff;
+	position: relative;
+	padding-top: 19px;
+}
+
+.cl-questionnaire .title {
+	margin-left: 15px;
+	font-family: Muli;
+	font-size: 15px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #4b4b4b;
+}
+
+.cl-questionnaire table {
+	margin-left: 15px;
+	font-family: Muli;
+	font-size: 15px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	border-spacing: 0px;
+}
+
+.cl-questionnaire .question {
+	font-family: Muli;
+	font-size: 13px;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #4b4b4b;
+}
+
+.cl-questionnaire .description {
+	font-family: Muli;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #767676;
+}
+
+.cl-questionnaire .col-2 {
+	max-width: 40%;
+	min-width: 300px;
+}
+
+.cl-questionnaire textarea {
+	max-width: 500px;
+	width: 90%;
+	height: 100px;
+}

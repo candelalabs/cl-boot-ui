@@ -54,6 +54,16 @@ storiesOf("Expander", module)
 		)
 	);
 
+storiesOf("Questionnaire", module)
+	.add(
+		"Basic Questionnaire",
+		Helper.makeDemo(
+			require("./questionnaire/basic/index").default(),
+			require("!!raw-loader!./questionnaire/basic/index"),
+			require("./questionnaire/basic/docs.md").default
+		)
+	);
+
 storiesOf("Selection Grid", module)
 	.add(
 		"Basic Example",
