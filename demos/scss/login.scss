@@ -1,5 +1,5 @@
 $theme-color:#56328f;
-$theme-gradient-horizontal: linear-gradient(90deg, rgba(86, 50, 143, 1) 0%, rgba(51, 47, 139, 1) 100%);
+$theme-gradient-horizontal: linear-gradient(to right, #5f3390, #2e2f8a);
 $theme-gradient-vertical: linear-gradient(180deg, rgba(86, 50, 143, 1) 0%, rgba(51, 47, 139, 1) 100%);
 $login-banner-image:url(../public/img/login-background.jpg);
 
@@ -10,6 +10,7 @@ $login-banner-image:url(../public/img/login-background.jpg);
     height: 100%;
     width: 100%;
     margin: -8px;
+    font-family: 'Muli', sans-serif;
     background: $theme-color;
     background: $theme-gradient-vertical;
 
@@ -53,13 +54,12 @@ $login-banner-image:url(../public/img/login-background.jpg);
 }
 
 .custom-text-input input {
-    width: 410px;
-    font-size: 16px;
+    width: 311px;
+    height: 48px;
+    border-radius: 8px;
+    border: solid 0.5px #e4d2fd;
+    background-color: #f6f5f8;
     text-align: center;
-    background: #f6f5f8;
-    padding: 25px 0px;
-    border: 1px solid #eee5fb;
-    border-radius: 4px
 }
 
 
@@ -85,11 +85,12 @@ $login-banner-image:url(../public/img/login-background.jpg);
 }
 
 .custom-submit-button button {
-    padding: 14px 46.5px;
-    font-size: 16px;
+    padding: 0 46.5px;
     border: none;
-    border-radius: 28px;
     color: white;
+    background: #56328f;
+    height: 34px;
+    border-radius: 17px;
     background: $theme-gradient-horizontal;
 }
 

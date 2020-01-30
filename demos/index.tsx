@@ -55,5 +55,16 @@ storiesOf("Login Module", module)
 		)
 	);
 
+
+storiesOf("Epos Elements", module)
+	.add(
+		"Epos Elements",
+		Helper.makeDemo(
+			require("./epos-elements/index").default(),
+			require("!!raw-loader!./epos-elements/index"),
+			require("./epos-elements/docs.md").default
+		)
+	);
+
 // enable this to log mouse location when writing new puppeteer tests
 //Helper.logMousePosition()

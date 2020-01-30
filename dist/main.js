@@ -280,25 +280,379 @@ exports.BaseWidget = BaseWidget;
 
 /***/ }),
 
-/***/ "./src/common/actions/BaseMouseAction.ts":
+/***/ "./src/epos-elements/details/epos-details-dropdown.tsx":
+/*!*************************************************************!*\
+  !*** ./src/epos-elements/details/epos-details-dropdown.tsx ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var EposDetailsDropdownElement = /** @class */ (function (_super) {
+    __extends(EposDetailsDropdownElement, _super);
+    /*  */
+    function EposDetailsDropdownElement(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.outsideClick = function (e) {
+            if (_this.node && _this.node.contains(e.target)) {
+                return;
+            }
+            _this.onClick(e);
+        };
+        _this.onItemClick = function (event, item) {
+            _this.onClick(event, item);
+        };
+        _this.onClick = function (event, value) {
+            if (_this.props && _this.props.onClick)
+                _this.props.onClick(event);
+            if (!_this.state.open) {
+                document.addEventListener('click', _this.outsideClick, false);
+            }
+            else {
+                document.removeEventListener('click', _this.outsideClick, false);
+            }
+            _this.setState(function (prevState) { return ({
+                open: !prevState.open,
+                value: value ? value : _this.state.value
+            }); });
+        };
+        _this.state = {
+            open: false,
+            value: null
+        };
+        _this.outsideClick = _this.outsideClick.bind(_this);
+        return _this;
+    }
+    EposDetailsDropdownElement.prototype.render = function () {
+        var _this = this;
+        var classList = ['epos-details-dropdown'];
+        if (this.props.classList) {
+            classList = __spreadArrays(classList, this.props.classList);
+        }
+        var listBlock = React.createElement("div", { className: "dropbox", ref: function (node) { _this.node = node; } }, this.props.list.map(function (item, index) {
+            return React.createElement("ul", { key: index.toString() },
+                React.createElement("li", { onClick: function (event) { return _this.onItemClick(event, item); } }, item));
+        }));
+        return (React.createElement("div", { className: classList.join(' ') },
+            React.createElement("label", null, this.props.label),
+            React.createElement("button", { onClick: function (event) { return _this.onClick(event); } },
+                this.state.value ? this.state.value : React.createElement("span", { className: "placeholder" },
+                    this.props.placeholder,
+                    " "),
+                React.createElement("span", { className: "caret" },
+                    React.createElement("svg", { width: "10", height: "10", xmlns: "http://www.w3.org/2000/svg" },
+                        React.createElement("g", null,
+                            React.createElement("title", null, "background"),
+                            React.createElement("rect", { fill: "none", id: "canvas_background", height: "12", width: "12", y: "-1", x: "-1" })),
+                        React.createElement("g", null,
+                            React.createElement("title", null, "Layer 1"),
+                            React.createElement("line", { "stroke-linecap": "square", "stroke-linejoin": "null", id: "svg_9", y2: "6.804675", x2: "4.250006", y1: "4.429691", x1: "1.875022", "fill-opacity": "null", "stroke-opacity": "null", "stroke-width": "1", stroke: "#686868", fill: "none" }),
+                            React.createElement("line", { "stroke-linecap": "square", "stroke-linejoin": "null", id: "svg_10", y2: "6.804675", x2: "4.375005", y1: "4.429691", x1: "6.999987", "fill-opacity": "null", "stroke-opacity": "null", "stroke-width": "1", stroke: "#686868", fill: "none" }))))),
+            this.state.open && listBlock));
+    };
+    return EposDetailsDropdownElement;
+}(BaseWidget_1.BaseWidget));
+exports.EposDetailsDropdownElement = EposDetailsDropdownElement;
+
+
+/***/ }),
+
+/***/ "./src/epos-elements/details/epos-details-radio.tsx":
+/*!**********************************************************!*\
+  !*** ./src/epos-elements/details/epos-details-radio.tsx ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var EposRadioElement = /** @class */ (function (_super) {
+    __extends(EposRadioElement, _super);
+    function EposRadioElement(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    EposRadioElement.prototype.render = function () {
+        var classList = ['epos-button'];
+        if (this.props.classList) {
+            classList = __spreadArrays(classList, this.props.classList);
+        }
+        return (React.createElement("div", null, "Hello world"));
+    };
+    return EposRadioElement;
+}(BaseWidget_1.BaseWidget));
+exports.EposRadioElement = EposRadioElement;
+
+
+/***/ }),
+
+/***/ "./src/epos-elements/details/epos-details-text-input.tsx":
+/*!***************************************************************!*\
+  !*** ./src/epos-elements/details/epos-details-text-input.tsx ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var EposDetailsTextInputElement = /** @class */ (function (_super) {
+    __extends(EposDetailsTextInputElement, _super);
+    function EposDetailsTextInputElement(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    EposDetailsTextInputElement.prototype.render = function () {
+        var classList = ['epos-details-text-input'];
+        if (this.props.classList) {
+            classList = __spreadArrays(classList, this.props.classList);
+        }
+        return (React.createElement("div", { className: classList.join(' ') },
+            React.createElement("label", null, this.props.label),
+            React.createElement("input", { type: this.props.type, placeholder: this.props.placeholder, onChange: this.props.onChange, onBlur: this.props.onBlur })));
+    };
+    return EposDetailsTextInputElement;
+}(BaseWidget_1.BaseWidget));
+exports.EposDetailsTextInputElement = EposDetailsTextInputElement;
+
+
+/***/ }),
+
+/***/ "./src/epos-elements/epos-button.tsx":
+/*!*******************************************!*\
+  !*** ./src/epos-elements/epos-button.tsx ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var EposButtonElement = /** @class */ (function (_super) {
+    __extends(EposButtonElement, _super);
+    function EposButtonElement(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    EposButtonElement.prototype.render = function () {
+        var classList = ['epos-button'];
+        if (this.props.classList) {
+            classList = __spreadArrays(classList, this.props.classList);
+        }
+        return (React.createElement("button", { className: classList.join(' '), onClick: this.props.onClick }, this.props.children));
+    };
+    return EposButtonElement;
+}(BaseWidget_1.BaseWidget));
+exports.EposButtonElement = EposButtonElement;
+
+
+/***/ }),
+
+/***/ "./src/epos-elements/epos-demo-elements.tsx":
+/*!**************************************************!*\
+  !*** ./src/epos-elements/epos-demo-elements.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var epos_button_1 = __webpack_require__(/*! ./epos-button */ "./src/epos-elements/epos-button.tsx");
+var epos_text_input_1 = __webpack_require__(/*! ./epos-text-input */ "./src/epos-elements/epos-text-input.tsx");
+var epos_details_text_input_1 = __webpack_require__(/*! ./details/epos-details-text-input */ "./src/epos-elements/details/epos-details-text-input.tsx");
+var epos_details_dropdown_1 = __webpack_require__(/*! ./details/epos-details-dropdown */ "./src/epos-elements/details/epos-details-dropdown.tsx");
+var epos_details_radio_1 = __webpack_require__(/*! ./details/epos-details-radio */ "./src/epos-elements/details/epos-details-radio.tsx");
+var EposDemoElements = /** @class */ (function (_super) {
+    __extends(EposDemoElements, _super);
+    function EposDemoElements(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    EposDemoElements.prototype.render = function () {
+        return (React.createElement("div", { style: {
+                background: 'white',
+                height: '100%'
+            } },
+            React.createElement("div", { className: "epos-gap" },
+                React.createElement(epos_button_1.EposButtonElement, null, "Example")),
+            React.createElement("div", { className: "epos-gap" },
+                React.createElement(epos_text_input_1.EposTextInputElement, { type: "text", placeholder: "User Name" })),
+            React.createElement("div", { className: "epos-gap" },
+                React.createElement(epos_details_text_input_1.EposDetailsTextInputElement, { type: "text", label: "Name" })),
+            React.createElement("div", { className: "epos-gap" },
+                React.createElement(epos_details_dropdown_1.EposDetailsDropdownElement, { label: "Title", placeholder: "Choose Title", list: ['Mr', 'Mrs'] })),
+            React.createElement("div", { className: "epos-gap" },
+                React.createElement(epos_details_dropdown_1.EposDetailsDropdownElement, { label: "Title", placeholder: "Choose Title", list: ['Mr', 'Mrs'] })),
+            React.createElement("div", { className: "epos-gap" },
+                React.createElement(epos_details_radio_1.EposRadioElement, null))));
+    };
+    return EposDemoElements;
+}(BaseWidget_1.BaseWidget));
+exports.EposDemoElements = EposDemoElements;
+
+
+/***/ }),
+
+/***/ "./src/epos-elements/epos-text-input.tsx":
 /*!***********************************************!*\
-  !*** ./src/common/actions/BaseMouseAction.ts ***!
+  !*** ./src/epos-elements/epos-text-input.tsx ***!
   \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var BaseMouseAction = /** @class */ (function () {
-    function BaseMouseAction(mouseX, mouseY) {
-        this.mouseX = mouseX;
-        this.mouseY = mouseY;
-        this.ms = new Date().getTime();
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var EposTextInputElement = /** @class */ (function (_super) {
+    __extends(EposTextInputElement, _super);
+    function EposTextInputElement(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {};
+        return _this;
     }
-    return BaseMouseAction;
-}());
-exports.BaseMouseAction = BaseMouseAction;
+    EposTextInputElement.prototype.render = function () {
+        var classList = ['epos-text-input'];
+        if (this.props.classList) {
+            classList = __spreadArrays(classList, this.props.classList);
+        }
+        return (React.createElement("input", { className: classList.join(''), type: this.props.type, onChange: this.props.onChange, placeholder: this.props.placeholder }));
+    };
+    return EposTextInputElement;
+}(BaseWidget_1.BaseWidget));
+exports.EposTextInputElement = EposTextInputElement;
 
 
 /***/ }),
@@ -328,6 +682,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var epos_text_input_1 = __webpack_require__(/*! ../epos-elements/epos-text-input */ "./src/epos-elements/epos-text-input.tsx");
 var LoginWidget = /** @class */ (function (_super) {
     __extends(LoginWidget, _super);
     function LoginWidget(props) {
@@ -345,9 +700,9 @@ var LoginWidget = /** @class */ (function (_super) {
                         React.createElement("div", { className: "candela-icon" },
                             React.createElement("img", { src: this.props.icon, alt: "Logo" }),
                             React.createElement("div", { className: "custom-text-input" },
-                                React.createElement("input", { type: "text", placeholder: "User Name" })),
+                                React.createElement(epos_text_input_1.EposTextInputElement, { type: "text", placeholder: "User Name" })),
                             React.createElement("div", { className: "custom-text-input" },
-                                React.createElement("input", { type: "password", placeholder: "Password" })),
+                                React.createElement(epos_text_input_1.EposTextInputElement, { type: "password", placeholder: "Password" })),
                             React.createElement("div", { className: "custom-submit-button", style: {
                                     marginTop: '60px'
                                 } },
@@ -384,6 +739,69 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./selection-grid/SelectionGridWidget */ "./src/selection-grid/SelectionGridWidget.tsx"));
 __export(__webpack_require__(/*! ./selection-pane/SelectionPaneWidget */ "./src/selection-pane/SelectionPaneWidget.tsx"));
 __export(__webpack_require__(/*! ./login/LoginWidget */ "./src/login/LoginWidget.tsx"));
+__export(__webpack_require__(/*! ./epos-elements/epos-demo-elements */ "./src/epos-elements/epos-demo-elements.tsx"));
+__export(__webpack_require__(/*! ./epos-elements/epos-button */ "./src/epos-elements/epos-button.tsx"));
+__export(__webpack_require__(/*! ./epos-elements/epos-text-input */ "./src/epos-elements/epos-text-input.tsx"));
+__export(__webpack_require__(/*! ./epos-elements/details/epos-details-dropdown */ "./src/epos-elements/details/epos-details-dropdown.tsx"));
+__export(__webpack_require__(/*! ./epos-elements/details/epos-details-text-input */ "./src/epos-elements/details/epos-details-text-input.tsx"));
+__export(__webpack_require__(/*! ./epos-elements/details/epos-details-radio */ "./src/epos-elements/details/epos-details-radio.tsx"));
+
+
+/***/ }),
+
+/***/ "./src/selection-grid/SelectionGridCard.tsx":
+/*!**************************************************!*\
+  !*** ./src/selection-grid/SelectionGridCard.tsx ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var Svg_1 = __webpack_require__(/*! ../svg-image/Svg */ "./src/svg-image/Svg.tsx");
+var SelectionGridCard = /** @class */ (function (_super) {
+    __extends(SelectionGridCard, _super);
+    function SelectionGridCard(props) {
+        var _this = _super.call(this, "selection-grid-card", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    SelectionGridCard.prototype.render = function () {
+        var _a = this.props, item = _a.item, style = _a.style, onClick = _a.onClick, onEditClick = _a.onEditClick, onDeleteClick = _a.onDeleteClick;
+        if (item.selected) {
+            return (React.createElement("div", { className: "selection-grid-card selected", "data-id": item.id, style: style },
+                React.createElement("img", { src: "img/group-11.svg", className: "edit-image nodrag", onClick: onEditClick }),
+                React.createElement("img", { src: "img/group-12.svg", className: "delete-image nodrag", onClick: onDeleteClick }),
+                React.createElement("span", { className: "item-amount" }, item.amount),
+                React.createElement(Svg_1.default, { url: item.imageSrc, className: "item-image nodrag" }),
+                React.createElement("span", { className: "item-title" }, item.title)));
+        }
+        else {
+            return (React.createElement("div", { className: "selection-grid-card", "data-id": item.id, style: style, onClick: onClick },
+                React.createElement("img", { src: item.imageSrc, className: "item-image nodrag" }),
+                React.createElement("br", null),
+                React.createElement("label", { className: "item-title" }, item.title)));
+        }
+    };
+    return SelectionGridCard;
+}(BaseWidget_1.BaseWidget));
+exports.default = SelectionGridCard;
 
 
 /***/ }),
@@ -415,7 +833,7 @@ var React = __webpack_require__(/*! react */ "react");
 var _ = __webpack_require__(/*! lodash */ "lodash");
 var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
 var Toolkit_1 = __webpack_require__(/*! ../Toolkit */ "./src/Toolkit.ts");
-var BaseMouseAction_1 = __webpack_require__(/*! ../common/actions/BaseMouseAction */ "./src/common/actions/BaseMouseAction.ts");
+var SelectionGridCard_1 = __webpack_require__(/*! ./SelectionGridCard */ "./src/selection-grid/SelectionGridCard.tsx");
 var SelectionGridWidget = /** @class */ (function (_super) {
     __extends(SelectionGridWidget, _super);
     function SelectionGridWidget(props) {
@@ -496,69 +914,54 @@ var SelectionGridWidget = /** @class */ (function (_super) {
                 if (ref) {
                     _this.parentRef = ref;
                 }
-            }, onMouseDown: function (event) {
-                if (event.nativeEvent.which !== 1 || _this.state.isMoving)
-                    return;
-                var result = _this.getMouseElement(event);
-                console.log(result);
-                if (result !== null) {
-                    var parentRect = _this.parentRef.getBoundingClientRect();
-                    var cardRect = result.element.getBoundingClientRect();
-                    result.item.moveX = result.item.initialX = cardRect.left - parentRect.left;
-                    result.item.moveY = result.item.initialY = cardRect.top - parentRect.top;
-                    result.item.moved = true;
-                    _this.setState({
-                        isMoving: true,
-                        action: new BaseMouseAction_1.BaseMouseAction(event.clientX, event.clientY),
-                        moveInfo: result
-                    });
-                    _this.state.document.addEventListener("mousemove", _this.onMouseMove);
-                    _this.state.document.addEventListener("mouseup", _this.onMouseUp);
-                }
             } },
             React.createElement("div", { className: "selection-grid-menu-title" }, "Select your needs in order of priority"),
             React.createElement("div", { className: "selection-grid-menu" }, this.props.data.map(function (item) {
                 if (item.moved || item.selected)
                     return null;
-                return (React.createElement("div", { className: "selection-grid-card noselect", "data-id": item.id },
-                    React.createElement("img", { src: item.imageSrc, className: "nodrag" }),
-                    React.createElement("br", null),
-                    React.createElement("label", null, item.title)));
+                return (React.createElement(SelectionGridCard_1.default, { item: item, onClick: function () {
+                        item.selected = true;
+                        var minimumIndex = 0;
+                        _this.state.selected.forEach(function (sel) {
+                            if (minimumIndex <= sel.index) {
+                                minimumIndex = sel.index + 1;
+                            }
+                        });
+                        _this.state.selected.push({
+                            index: minimumIndex,
+                            item: item
+                        });
+                        _this.setState({});
+                    } }));
             })),
             React.createElement("div", { className: "selection-grid-selected-title" }, "Selected Needs"),
             React.createElement("div", { className: "selection-grid-selected" + (this.state.hoverSelect ? " hover" : ""), ref: function (ref) {
                     if (ref) {
                         _this.selectedParentRef = ref;
                     }
-                } },
-                this.props.data.map(function (item) {
-                    if (item.moved || !item.selected)
-                        return null;
-                    return (React.createElement("div", { className: "selection-grid-card noselect", "data-id": item.id },
-                        React.createElement("img", { src: item.imageSrc, className: "nodrag" }),
-                        React.createElement("br", null),
-                        React.createElement("label", null, item.title)));
-                }),
-                this.state.placeholders.map(function (title, index) {
-                    if (_this.state.selected.length > index)
-                        return null;
+                } }, this.state.placeholders.map(function (title, index) {
+                if (index < _this.state.selected.length) {
+                    var item_1 = _this.state.selected[index].item;
+                    return (React.createElement(SelectionGridCard_1.default, { item: item_1, onDeleteClick: function () {
+                            item_1.selected = false;
+                            _.remove(_this.state.selected, { item: item_1 });
+                            _this.setState({});
+                        } }));
+                }
+                else {
                     return (React.createElement("div", { className: "selection-grid-placeholder" },
                         React.createElement("label", null, title)));
-                })),
+                }
+            })),
             this.props.data.map(function (item) {
                 if (!item.moved)
                     return null;
                 else
-                    return (React.createElement("div", { className: "selection-grid-card noselect", "data-id": item.id, style: {
+                    return (React.createElement(SelectionGridCard_1.default, { item: item, style: {
                             position: "absolute",
                             left: item.moveX,
                             top: item.moveY,
-                        } },
-                        React.createElement("img", { src: item.imageSrc, className: "nodrag" }),
-                        React.createElement("br", null),
-                        React.createElement("label", null,
-                            item.title,
-                            " xyz")));
+                        } }));
             })));
     };
     return SelectionGridWidget;
@@ -612,6 +1015,64 @@ var SelectionPaneWidget = /** @class */ (function (_super) {
     return SelectionPaneWidget;
 }(BaseWidget_1.BaseWidget));
 exports.SelectionPaneWidget = SelectionPaneWidget;
+
+
+/***/ }),
+
+/***/ "./src/svg-image/Svg.tsx":
+/*!*******************************!*\
+  !*** ./src/svg-image/Svg.tsx ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var Svg = /** @class */ (function (_super) {
+    __extends(Svg, _super);
+    function Svg() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            svg: null,
+            loading: false,
+        };
+        return _this;
+    }
+    Svg.prototype.componentDidMount = function () {
+        var _this = this;
+        fetch(this.props.url)
+            .then(function (res) { return res.text(); })
+            .then(function (text) { return _this.setState({ svg: text }); });
+    };
+    Svg.prototype.render = function () {
+        var _a = this.state, loading = _a.loading, svg = _a.svg;
+        var className = this.props.className;
+        if (loading) {
+            return React.createElement("div", { className: "spinner " + className });
+        }
+        else if (!svg) {
+            return React.createElement("div", { className: "error " + className });
+        }
+        return React.createElement("div", { className: className, dangerouslySetInnerHTML: { __html: this.state.svg } });
+    };
+    return Svg;
+}(React.Component));
+exports.default = Svg;
 
 
 /***/ }),
