@@ -35,9 +35,8 @@ export class Dialog extends BaseWidget<any, any> {
 			>
 				<Fade in={this.props.open}>
 					<div className="cl-dialog-container">
-						<div className="cl-dialog-header"></div>
-						<h2 id="transition-modal-title">Transition modal</h2>
-						<p id="transition-modal-description">react-transition-group animates me.</p>
+						<div className="cl-dialog-header">{this.props.header}</div>
+						<div className="cl-dialog-content">{this.props.children}</div>
 					</div>
 				</Fade>
 			</Modal>
