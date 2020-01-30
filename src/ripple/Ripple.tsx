@@ -101,6 +101,7 @@ class Ripple extends BaseWidget<InferProps<typeof RipplePropTypes>, any> {
 		});
 
 		return (
+			// @ts-ignore timeout
 			<Transition onEnter={this.handleEnter} onExit={this.handleExit} {...other}>
 				<span className={rippleClassName} style={rippleStyles}>
 					<span className={childClassName} />

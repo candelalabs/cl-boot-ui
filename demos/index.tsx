@@ -28,9 +28,19 @@ storiesOf("Button", module)
 	.add(
 		"Basic Button",
 		Helper.makeDemo(
-			require("./button/index").default(),
-			require("!!raw-loader!./button/index"),
-			require("./button/docs.md").default
+			require("./button/basic/index").default(),
+			require("!!raw-loader!./button/basic/index"),
+			require("./button/basic/docs.md").default
+		)
+	);
+
+storiesOf("Switch", module)
+	.add(
+		"Basic Switch",
+		Helper.makeDemo(
+			require("./switch/basic/index").default(),
+			require("!!raw-loader!./switch/basic/index"),
+			require("./switch/basic/docs.md").default
 		)
 	);
 
