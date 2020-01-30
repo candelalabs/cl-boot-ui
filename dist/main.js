@@ -14704,6 +14704,63 @@ __export(__webpack_require__(/*! ./login/LoginWidget */ "./src/login/LoginWidget
 __export(__webpack_require__(/*! ./button/Button */ "./src/button/Button.tsx"));
 __export(__webpack_require__(/*! ./switch/Switch */ "./src/switch/Switch.tsx"));
 __export(__webpack_require__(/*! ./expander/Expander */ "./src/expander/Expander.tsx"));
+__export(__webpack_require__(/*! ./questionnaire/Questionnaire */ "./src/questionnaire/Questionnaire.tsx"));
+
+
+/***/ }),
+
+/***/ "./src/questionnaire/Questionnaire.tsx":
+/*!*********************************************!*\
+  !*** ./src/questionnaire/Questionnaire.tsx ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var Switch_1 = __webpack_require__(/*! ../switch/Switch */ "./src/switch/Switch.tsx");
+var Questionnaire = /** @class */ (function (_super) {
+    __extends(Questionnaire, _super);
+    function Questionnaire(props) {
+        var _this = _super.call(this, "questionnaire", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    Questionnaire.prototype.render = function () {
+        return (React.createElement("div", { className: "cl-questionnaire" },
+            React.createElement("div", { className: "title" }, this.props.title),
+            React.createElement("table", null, this.props.data.map(function (item) {
+                return (React.createElement("tr", null,
+                    React.createElement("td", { className: "col-1" },
+                        React.createElement("div", { className: "question" }, item.question),
+                        React.createElement("p", { className: "description" }, item.description),
+                        React.createElement(Switch_1.Switch, { leftLabel: "No", rightLabel: "Yes" })),
+                    React.createElement("td", { className: "col-2" },
+                        React.createElement("div", { className: "question more" }, "If yes please provide more details ?  "),
+                        React.createElement("textarea", null))));
+            })),
+            this.props.children,
+            React.createElement("div", null, "\u00A0")));
+    };
+    return Questionnaire;
+}(BaseWidget_1.BaseWidget));
+exports.Questionnaire = Questionnaire;
 
 
 /***/ }),
