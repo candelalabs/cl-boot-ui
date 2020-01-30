@@ -29,10 +29,14 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.0",
     "@storybook/cli": "^5.0.11",
+    "classnames": "^2.2.6",
     "closest": "^0.0.1",
+    "clsx": "^1.0.4",
     "lodash": "^4.17.10",
-    "react": "^16.3.2"
+    "react": "^16.3.2",
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.1.0-alpha.36",

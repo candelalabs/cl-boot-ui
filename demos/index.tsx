@@ -24,6 +24,16 @@ setOptions({
 	addonPanelInRight: true
 });
 
+storiesOf("Button", module)
+	.add(
+		"Basic Button",
+		Helper.makeDemo(
+			require("./button/index").default(),
+			require("!!raw-loader!./button/index"),
+			require("./button/docs.md").default
+		)
+	);
+
 storiesOf("Selection Grid", module)
 	.add(
 		"Basic Example",
