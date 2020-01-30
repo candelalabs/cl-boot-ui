@@ -22,25 +22,32 @@ export class Questionnaire extends BaseWidget<any, any> {
 			<div 
 				className="cl-questionnaire" 
 			>
-				<div className="title">CKA</div>				
+				<div className="title">{this.props.title}</div>				
 				<table>
-					<tr>
-						<td className="col-1">
-							<div className="question">Did you hold any diploma or higher qualification in the finance-related disciplines ?  </div>
-							<p className="description">
-							Example: accountancy, actuarial science, business/business adminstration/business management/ studies, capital markets, commerce, economics, finance, financial engineering, financial planning, computational finance and insurance   
-							</p>
-							<Switch
-								leftLabel="No"
-								rightLabel="Yes"
-							/>
-						</td>
-						<td className="col-2">
-							<div className="question">If yes please provide more details ?  </div>
-							<textarea></textarea>
-						</td>
-					</tr>
+					{
+						this.props.data.map((item)=>{
+							return (
+								<tr>
+									<td className="col-1">
+										<div className="question">{item.question}</div>
+										<p className="description">
+										{item.description}
+										</p>
+										<Switch
+											leftLabel="No"
+											rightLabel="Yes"
+										/>
+									</td>
+									<td className="col-2">
+										<div className="question more">If yes please provide more details ?  </div>
+										<textarea></textarea>
+									</td>
+								</tr>
+							)
+						})
+					}
 				</table>
+				{this.props.children}
 				<div>&nbsp;</div>
 			</div>
 		)
