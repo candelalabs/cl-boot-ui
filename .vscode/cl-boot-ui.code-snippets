@@ -1,0 +1,61 @@
+{
+	// Place your snippets for typescriptreact here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"TSX File for cl-boot-ui": {
+		"prefix": "cl-boot-ui",
+		"body": [
+			"import * as React from \"react\";",
+			"import * as _ from \"lodash\";",
+			"import { BaseWidget, BaseWidgetProps } from \"../common/BaseWidget\";",
+			"\n",
+			"export interface $1Props extends BaseWidgetProps {",
+			"\tclassList?:string[];",
+			"\tonClick?:any;",
+			"}",
+			"\n",
+			"export interface $1State {}",
+			"\n",
+			"export class $1Element extends BaseWidget<$1Props, $1State> {",
+			"\tconstructor(props: $1Props) {",
+			"\t\tsuper(\"selection-grid\", props);",
+			"\t\tthis.state = {};",
+			"\t}",
+			"\n",
+			"\trender() {",
+			"\t\tlet classList = ['epos-button'];",
+			"\t\tif(this.props.classList){",
+			"\t\t\tclassList = [...classList,...this.props.classList];",
+			"\t\t}",
+			"\n",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+	"TSX File for cl-boot-ui add classList": {
+		"prefix": "cl-boot-ui-classlist",
+		"body": [
+			"\t\tlet classList = ['epos-button'];",
+			"\t\tif(this.props.classList){",
+			"\t\t\tclassList = [...classList,...this.props.classList];",
+			"\t\t}",
+			"\n"
+		],
+		"description": "Add classList"
+	}
+}

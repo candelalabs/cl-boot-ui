@@ -1,7 +1,10 @@
 import * as React from "react";
 import * as _ from "lodash";
 import { BaseWidget, BaseWidgetProps } from "../common/BaseWidget";
-// import logo from ' http://localhost:5000/candela_icon.jpg';
+
+import {EposButtonElement} from '../epos-elements/epos-button';
+import {EposTextInputElement} from '../epos-elements/epos-text-input';
+
 
 export interface LoginProps extends BaseWidgetProps {
     icon:string;
@@ -29,10 +32,10 @@ export class LoginWidget extends BaseWidget<LoginProps, LoginState> {
                             <div className="candela-icon">
                                 <img src={this.props.icon} alt="Logo" />
                                 <div className="custom-text-input"  >
-                                    <input type="text" placeholder="User Name" />
+                                    <EposTextInputElement type="text" placeholder="User Name" />
                                 </div>
                                 <div className="custom-text-input"  >
-                                    <input type="password" placeholder="Password" />
+                                    <EposTextInputElement type="password" placeholder="Password" />
                                 </div>                                
                                 <div className="custom-submit-button" style={{
                                     marginTop: '60px'
