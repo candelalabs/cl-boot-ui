@@ -44,6 +44,16 @@ storiesOf("Switch", module)
 		)
 	);
 
+storiesOf("Expander", module)
+	.add(
+		"Basic Expander",
+		Helper.makeDemo(
+			require("./expander/basic/index").default(),
+			require("!!raw-loader!./expander/basic/index"),
+			require("./expander/basic/docs.md").default
+		)
+	);
+
 storiesOf("Selection Grid", module)
 	.add(
 		"Basic Example",
