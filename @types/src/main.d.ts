@@ -16,3 +16,4 @@ export * from './epos-elements/epos-text-input';
 export * from './epos-elements/details/epos-details-dropdown';
 export * from './epos-elements/details/epos-details-text-input';
 export * from './epos-elements/details/epos-details-radio';
+export * from "./slider/Slider";

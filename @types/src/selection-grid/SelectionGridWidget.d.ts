@@ -15,6 +15,7 @@ export interface SelectionGridItem {
 }
 export interface SelectionGridProps extends BaseWidgetProps {
     data: Array<SelectionGridItem>;
+    onEditClick?: any;
 }
 export interface SelectionGridSelected {
     index: number;
