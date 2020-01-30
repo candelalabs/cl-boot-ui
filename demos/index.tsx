@@ -94,6 +94,15 @@ storiesOf("Selection Pane", module)
 		)
 	);
 
+storiesOf("Dialog", module)
+	.add(
+		"Basic Dialog",
+		Helper.makeDemo(
+			require("./dialog/basic/index").default(),
+			require("!!raw-loader!./dialog/basic/index"),
+			require("./dialog/basic/docs.md").default
+		)
+	);
 
 storiesOf("Login Module", module)
 	.add(
