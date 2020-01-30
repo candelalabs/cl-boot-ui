@@ -1,0 +1,29 @@
+
+.selection-pane-container {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.selection-button {
+    border-radius: 3px;
+    border: solid 0.7px #8852c6;
+    margin-right: 15px;
+    color: #8852c6;
+    padding: 10px 17px;
+    cursor: pointer;
+
+    font-family: Muli;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.selection-button.selected {
+	border-radius: 3px;
+	background-color: #8852c6;
+	color: #ffffff;
+}

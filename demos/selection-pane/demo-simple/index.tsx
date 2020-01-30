@@ -4,5 +4,20 @@ import {
 import * as React from "react";
 
 export default () => {
-	return <SelectionPaneWidget/>;
+	return <SelectionPaneWidget
+	data={[
+		{
+			title: "Conservative"
+		},
+		{
+			title: "Moderately conservative"
+		},
+		{
+			title: "Moderately aggressive"
+		},
+		{
+			title: "Aggressive"
+		}
+	]}
+	/>;
 };

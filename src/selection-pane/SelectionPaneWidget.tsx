@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as _ from "lodash";
 import { BaseWidget, BaseWidgetProps } from "../common/BaseWidget";
+import classNames from "classnames";
 
 export interface SelectionPaneProps extends BaseWidgetProps {
 }
@@ -9,21 +10,29 @@ export interface SelectionPaneState {
 	document: any;
 }
 
-export class SelectionPaneWidget extends BaseWidget<SelectionPaneProps, SelectionPaneState> {
-	constructor(props: SelectionPaneProps) {
-		super("selection-grid", props);
+export class SelectionPaneWidget extends BaseWidget<any, any> {
+	constructor(props: any) {
+		super("selection-pane", props);
 		this.state = {
-			document: null
+			selectedIndex: 0
 		};
 	}
 
 	render() {
 		return (
 			<div className="selection-pane-container">
-				<button className="selection-button">Conservative</button>
-				<button className="selection-button">Moderately conservative</button>
-				<button className="selection-button">Moderately aggressive</button>
-				<button className="selection-button">Aggressive</button>
+				{
+					this.props.data.map((item, index)=>{
+						return (
+							<button 
+							className={classNames("selection-button", this.state.selectedIndex===index?"selected":"")}
+							onClick={()=>{
+								this.setState({selectedIndex: index});
+							}}
+							>{item.title}</button>
+						)
+					})
+				}
 			</div>
 		)
 	}
