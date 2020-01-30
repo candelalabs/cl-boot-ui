@@ -64,6 +64,16 @@ storiesOf("Questionnaire", module)
 		)
 	);
 
+storiesOf("ProgressPane", module)
+	.add(
+		"Basic ProgressPane",
+		Helper.makeDemo(
+			require("./progress-pane/basic/index").default(),
+			require("!!raw-loader!./progress-pane/basic/index"),
+			require("./progress-pane/basic/docs.md").default
+		)
+	);
+
 storiesOf("Selection Grid", module)
 	.add(
 		"Basic Example",

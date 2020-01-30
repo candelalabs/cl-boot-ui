@@ -9,3 +9,4 @@ export * from "./button/Button";
 export * from "./switch/Switch";
 export * from "./expander/Expander";
 export * from "./questionnaire/Questionnaire";
+export * from "./progress-pane/ProgressPane";

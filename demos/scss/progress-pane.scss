@@ -1,0 +1,60 @@
+.fna-tab {
+	margin-left: 10px;
+	width: 880px;
+	height: 30px;
+	border-radius: 15px;
+	border: solid 0.7px rgba(48, 47, 138, 0.2);
+	background-color: #f8f8ff;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+	box-sizing: content-box;
+}
+
+.fna-tab-item {
+	height: 30px;
+	text-align: center;
+	cursor: pointer;
+	line-height: 30px;
+	margin-right: 20px;
+}
+.fna-tab-item:last-child.selected {
+	margin-right:-1px;
+}
+.fna-tab-item.selected {
+	width: 138px;
+	height: 32px;
+	border-radius: 15px;
+	box-shadow: 1px 3px 6px 0 rgba(47, 47, 138, 0.17);
+	background-color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+	margin-top: -1px;
+    margin-left: -1px;
+}
+
+.fna-tab-item span {
+	font-family: Muli;
+	font-size: 10px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	cursor: pointer;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.fna-tab-item:first-child {
+	margin-left: 10px;
+}
+.fna-tab-item:first-child.selected {
+	margin-left: -1px;
+}
+
+.fna-tab-item.selected span {
+	color: #6f489b;
+	cursor: pointer;
+}
