@@ -1,0 +1,134 @@
+.epos-gap {
+    margin: 10px;
+}
+
+/* Epos Button */
+.epos-button {
+    padding: 0 46.5px;
+    border: none;
+    color: white;
+    background: #56328f;
+    height: 34px;
+    border-radius: 17px;
+    background-image: linear-gradient(to right, #5f3390, #2e2f8a);
+}
+
+/* Epos Text Input */
+.epos-text-input {
+    width: 311px;
+    height: 48px;
+    border-radius: 8px;
+    border: solid 0.5px #e4d2fd;
+    background-color: #f6f5f8;
+    text-align: center;
+}
+
+
+.epos-text-input::placeholder {
+    color: #6b67aa;
+    opacity: 1;
+    /* Firefox */
+}
+
+.epos-text-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #6b67aa;
+}
+
+.epos-text-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #6b67aa;
+}
+
+
+/* Epos Details Text Input,Epos Details Dropdown */
+.epos-details-text-input,
+.epos-details-dropdown {
+    display: inline-block;
+}
+
+.epos-details-text-input label,
+.epos-details-dropdown label {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #656565;
+}
+
+.epos-details-text-input input,
+.epos-details-dropdown button {
+    border-radius: 3px;
+    border: solid 0.7px #939393;
+    margin-top: 5.5px;
+    padding: 2px;
+    text-align: left;
+}
+
+.epos-details-text-input input {
+    height: 34px;
+    width: 167px;
+}
+
+/* Epos Details Dropdown */
+.epos-details-dropdown button {
+    width: 167px;
+    height: 34px;
+    background: white;
+}
+
+.epos-details-dropdown button .placeholder {
+    color: grey;
+}
+
+.epos-details-dropdown button .caret {
+    float: right;
+    margin-right: 6px;
+}
+
+.epos-details-dropdown .dropbox {
+    position: absolute;
+    background: white;
+    width: 167px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    border: solid 0.7px #939393;
+    z-index: 1000;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.epos-details-dropdown .dropbox ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.epos-details-dropdown .dropbox ul>li {
+    padding: 6px 10px;
+}
+
+
+
+
+.epos-details-dropdown .dropbox ul>li:hover,
+.epos-details-dropdown .dropbox ul>li:focus {
+    color: #262626;
+    background-color: #f5f5f5;
+    color: white;
+    background-image: linear-gradient(to right, #5f3390, #2e2f8a);
+}
