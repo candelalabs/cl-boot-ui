@@ -20,7 +20,8 @@ export interface SelectionGridItem {
 }
 
 export interface SelectionGridProps extends BaseWidgetProps {
-	data: Array<SelectionGridItem>
+	data: Array<SelectionGridItem>,
+	onEditClick?: any
 }
 
 export interface SelectionGridSelected {
@@ -187,11 +188,17 @@ export class SelectionGridWidget extends BaseWidget<SelectionGridProps, Selectio
 							if(index < this.state.selected.length) {
 								let item = this.state.selected[index].item;
 								return (
-									<SelectionGridCard item={item} onDeleteClick={()=>{
+									<SelectionGridCard item={item} 
+									onDeleteClick={()=>{
 										item.selected = false;
 										_.remove(this.state.selected, {item: item});
 										this.setState({});
-									}} />
+									}} 
+									onEditClick={()=>{
+										if(this.props.onEditClick)
+											this.props.onEditClick(index);
+									}}
+									/>
 								);
 							} else {
 								return (
