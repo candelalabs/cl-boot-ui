@@ -44,6 +44,16 @@ storiesOf("Switch", module)
 		)
 	);
 
+storiesOf("Slider", module)
+	.add(
+		"Basic Slider",
+		Helper.makeDemo(
+			require("./slider/basic/index").default(),
+			require("!!raw-loader!./slider/basic/index"),
+			require("./slider/basic/docs.md").default
+		)
+	);
+
 storiesOf("Expander", module)
 	.add(
 		"Basic Expander",
