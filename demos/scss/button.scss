@@ -11,6 +11,52 @@
     font-weight: 500;
     border-radius: 4px;
     letter-spacing: 0.02857em;
-    text-transform: uppercase;
     position: relative;
+}
+
+.btn-default {
+    height: 34px;
+    border: none;
+    border-radius: 17px;
+    background-image: linear-gradient(to right, #5f3390, #2e2f8a);
+    color: #fff;
+	outline: none;
+}
+
+.btn-alternate {
+	height: 34px;
+	border-radius: 17px;
+	border: solid 0.7px #31308b;
+	background-color: #fff;
+    color: #302f8a;
+	outline: none;
+}
+
+.btn-navigate {
+	height: 34px;
+	border-radius: 17px;
+    border: solid 0.7px #30308b;
+	background-color: #eff0fa;
+    color: #302f8a;
+	outline: none;
+}
+
+.btn-navigate .cl-button-label {
+    font-family: Muli;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    color: #30308b;
+}
+
+.btn-navigate .caret.before {
+    float: left;
+    margin-right: 5px;
+}
+
+.btn-navigate .caret.after {
+    float: right;
+    margin-left: 5px;
 }

@@ -10,16 +10,14 @@ export interface ButtonProps extends BaseWidgetProps {
 }
 
 export interface ButtonState {
-	document: any;
 }
 
-export class Button extends BaseWidget<ButtonProps, ButtonState> {
+export class Button extends BaseWidget<any, any> {
 	ripple: TouchRipple;
 
 	constructor(props: ButtonProps) {
 		super("button", props);
 		this.state = {
-			document: null
 		};
 	}
 
@@ -34,7 +32,9 @@ export class Button extends BaseWidget<ButtonProps, ButtonState> {
 			}}
 			onClick={this.props.onClick}
 			>
+				{this.props.before}
 				<span className="cl-button-label">{this.props.label}</span>
+				{this.props.after}
 				<TouchRipple ref={(ref)=>{this.ripple = ref}} center={false} />
 			</button>
 		)
