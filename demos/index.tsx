@@ -104,6 +104,16 @@ storiesOf("Selection Pane", module)
 		)
 	);
 
+storiesOf("Layout", module)
+	.add(
+		"Tabular Cards",
+		Helper.makeDemo(
+			require("./layout/tabular-cards/index").default(),
+			require("!!raw-loader!./layout/tabular-cards/index"),
+			require("./layout/tabular-cards/docs.md").default
+		)
+	);
+
 storiesOf("Dialog", module)
 	.add(
 		"Basic Dialog",
