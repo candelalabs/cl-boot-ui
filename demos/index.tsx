@@ -112,6 +112,13 @@ storiesOf("Layout", module)
 			require("!!raw-loader!./layout/tabular-cards/index"),
 			require("./layout/tabular-cards/docs.md").default
 		)
+	).add(
+		"Summary",
+		Helper.makeDemo(
+			require("./layout/summary/index").default(),
+			require("!!raw-loader!./layout/summary/index"),
+			require("./layout/summary/docs.md").default
+		)
 	);
 
 storiesOf("Dialog", module)
