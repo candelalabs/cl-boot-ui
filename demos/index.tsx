@@ -113,11 +113,18 @@ storiesOf("Layout", module)
 			require("./layout/tabular-cards/docs.md").default
 		)
 	).add(
-		"Summary",
+		"Header-Details Cards",
 		Helper.makeDemo(
-			require("./layout/summary/index").default(),
-			require("!!raw-loader!./layout/summary/index"),
-			require("./layout/summary/docs.md").default
+			require("./layout/header-details-cards/index").default(),
+			require("!!raw-loader!./layout/header-details-cards/index"),
+			require("./layout/header-details-cards/docs.md").default
+		)
+	).add(
+		"Cross Table",
+		Helper.makeDemo(
+			require("./layout/cross-table/index").default(),
+			require("!!raw-loader!./layout/cross-table/index"),
+			require("./layout/cross-table/docs.md").default
 		)
 	);
 
