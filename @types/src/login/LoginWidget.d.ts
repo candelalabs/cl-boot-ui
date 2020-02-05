@@ -6,7 +6,7 @@ export interface LoginProps extends BaseWidgetProps {
 export interface LoginState {
     document: any;
 }
-export declare class LoginWidget extends BaseWidget<LoginProps, LoginState> {
+export declare class LoginWidget extends BaseWidget<any, any> {
     constructor(props: LoginProps);
     render(): JSX.Element;
 }

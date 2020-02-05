@@ -17270,6 +17270,56 @@ exports.Toolkit = Toolkit;
 
 /***/ }),
 
+/***/ "./src/app-bar/AppBar.tsx":
+/*!********************************!*\
+  !*** ./src/app-bar/AppBar.tsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var AppBar = /** @class */ (function (_super) {
+    __extends(AppBar, _super);
+    function AppBar(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {};
+        return _this;
+    }
+    AppBar.prototype.componentDidMount = function () {
+    };
+    AppBar.prototype.render = function () {
+        return (React.createElement("div", { className: "fna-titlebar" },
+            React.createElement("div", { className: "align-left" },
+                React.createElement("img", { src: "img/group-9.svg", className: "Group-9" }),
+                React.createElement("span", { className: "title" }, "Selwyn\u2019s Needs & Risk Profilling")),
+            React.createElement("div", { className: "align-right" },
+                React.createElement("div", { className: "save-button" },
+                    React.createElement("img", { src: "img/floppy-disk-1.svg", className: "floppy-disk-1" }),
+                    React.createElement("span", null, "Save")))));
+    };
+    return AppBar;
+}(React.Component));
+exports.AppBar = AppBar;
+
+
+/***/ }),
+
 /***/ "./src/button/Button.tsx":
 /*!*******************************!*\
   !*** ./src/button/Button.tsx ***!
@@ -17301,9 +17351,7 @@ var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button(props) {
         var _this = _super.call(this, "button", props) || this;
-        _this.state = {
-            document: null
-        };
+        _this.state = {};
         return _this;
     }
     Button.prototype.render = function () {
@@ -17313,7 +17361,9 @@ var Button = /** @class */ (function (_super) {
             }, onMouseUp: function (event) {
                 _this.ripple.stop(event, function () { });
             }, onClick: this.props.onClick },
+            this.props.before,
             React.createElement("span", { className: "cl-button-label" }, this.props.label),
+            this.props.after,
             React.createElement(TouchRipple_1.default, { ref: function (ref) { _this.ripple = ref; }, center: false })));
     };
     return Button;
@@ -17862,6 +17912,52 @@ exports.Expander = Expander;
 
 /***/ }),
 
+/***/ "./src/login/LoginDetails.tsx":
+/*!************************************!*\
+  !*** ./src/login/LoginDetails.tsx ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
+var LoginDetails = /** @class */ (function (_super) {
+    __extends(LoginDetails, _super);
+    function LoginDetails(props) {
+        var _this = _super.call(this, "selection-grid", props) || this;
+        _this.state = {};
+        return _this;
+    }
+    LoginDetails.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement("div", { className: "login-section" },
+                React.createElement("div", { className: "candela-icon" },
+                    React.createElement("img", { src: this.props.icon, alt: "Logo" }),
+                    this.props.children))));
+    };
+    return LoginDetails;
+}(BaseWidget_1.BaseWidget));
+exports.LoginDetails = LoginDetails;
+
+
+/***/ }),
+
 /***/ "./src/login/LoginWidget.tsx":
 /*!***********************************!*\
   !*** ./src/login/LoginWidget.tsx ***!
@@ -17887,7 +17983,6 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "react");
 var BaseWidget_1 = __webpack_require__(/*! ../common/BaseWidget */ "./src/common/BaseWidget.tsx");
-var epos_text_input_1 = __webpack_require__(/*! ../epos-elements/epos-text-input */ "./src/epos-elements/epos-text-input.tsx");
 var LoginWidget = /** @class */ (function (_super) {
     __extends(LoginWidget, _super);
     function LoginWidget(props) {
@@ -17900,23 +17995,7 @@ var LoginWidget = /** @class */ (function (_super) {
     LoginWidget.prototype.render = function () {
         return (React.createElement("div", { className: "outer" },
             React.createElement("div", { className: "middle" },
-                React.createElement("div", { className: "inner" },
-                    React.createElement("div", { className: "login-section" },
-                        React.createElement("div", { className: "candela-icon" },
-                            React.createElement("img", { src: this.props.icon, alt: "Logo" }),
-                            React.createElement("div", { className: "custom-text-input" },
-                                React.createElement(epos_text_input_1.EposTextInputElement, { type: "text", placeholder: "User Name" })),
-                            React.createElement("div", { className: "custom-text-input" },
-                                React.createElement(epos_text_input_1.EposTextInputElement, { type: "password", placeholder: "Password" })),
-                            React.createElement("div", { className: "custom-submit-button", style: {
-                                    marginTop: '60px'
-                                } },
-                                React.createElement("button", null, "Login")),
-                            React.createElement("div", { className: "forgot-password" },
-                                "Forgot Password? ",
-                                React.createElement("a", { style: {
-                                        textDecoration: 'none'
-                                    }, href: "#" }, "click here"))))))));
+                React.createElement("div", { className: "inner" }, this.props.children))));
     };
     return LoginWidget;
 }(BaseWidget_1.BaseWidget));
@@ -17944,6 +18023,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./selection-grid/SelectionGridWidget */ "./src/selection-grid/SelectionGridWidget.tsx"));
 __export(__webpack_require__(/*! ./selection-pane/SelectionPaneWidget */ "./src/selection-pane/SelectionPaneWidget.tsx"));
 __export(__webpack_require__(/*! ./login/LoginWidget */ "./src/login/LoginWidget.tsx"));
+__export(__webpack_require__(/*! ./login/LoginDetails */ "./src/login/LoginDetails.tsx"));
 __export(__webpack_require__(/*! ./button/Button */ "./src/button/Button.tsx"));
 __export(__webpack_require__(/*! ./switch/Switch */ "./src/switch/Switch.tsx"));
 __export(__webpack_require__(/*! ./expander/Expander */ "./src/expander/Expander.tsx"));
@@ -17957,6 +18037,7 @@ __export(__webpack_require__(/*! ./epos-elements/details/epos-details-dropdown *
 __export(__webpack_require__(/*! ./epos-elements/details/epos-details-text-input */ "./src/epos-elements/details/epos-details-text-input.tsx"));
 __export(__webpack_require__(/*! ./epos-elements/details/epos-details-radio */ "./src/epos-elements/details/epos-details-radio.tsx"));
 __export(__webpack_require__(/*! ./slider/Slider */ "./src/slider/Slider.tsx"));
+__export(__webpack_require__(/*! ./app-bar/AppBar */ "./src/app-bar/AppBar.tsx"));
 
 
 /***/ }),

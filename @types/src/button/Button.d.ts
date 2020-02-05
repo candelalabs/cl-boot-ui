@@ -6,9 +6,8 @@ export interface ButtonProps extends BaseWidgetProps {
     onClick?: any;
 }
 export interface ButtonState {
-    document: any;
 }
-export declare class Button extends BaseWidget<ButtonProps, ButtonState> {
+export declare class Button extends BaseWidget<any, any> {
     ripple: TouchRipple;
     constructor(props: ButtonProps);
     render(): JSX.Element;

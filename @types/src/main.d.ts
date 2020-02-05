@@ -4,6 +4,7 @@
 export * from "./selection-grid/SelectionGridWidget";
 export * from "./selection-pane/SelectionPaneWidget";
 export * from "./login/LoginWidget";
+export * from "./login/LoginDetails";
 export * from "./button/Button";
 export * from "./switch/Switch";
 export * from "./expander/Expander";
@@ -17,3 +18,4 @@ export * from './epos-elements/details/epos-details-dropdown';
 export * from './epos-elements/details/epos-details-text-input';
 export * from './epos-elements/details/epos-details-radio';
 export * from "./slider/Slider";
+export * from "./app-bar/AppBar";

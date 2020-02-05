@@ -14,7 +14,7 @@ export interface LoginState {
     document: any;
 }
 
-export class LoginWidget extends BaseWidget<LoginProps, LoginState> {
+export class LoginWidget extends BaseWidget<any, any> {
     constructor(props: LoginProps) {
         super("selection-grid", props);
         this.state = {
@@ -28,29 +28,9 @@ export class LoginWidget extends BaseWidget<LoginProps, LoginState> {
             <div className="outer">
                 <div className="middle">
                     <div className="inner">
-                        <div className="login-section">
-                            <div className="candela-icon">
-                                <img src={this.props.icon} alt="Logo" />
-                                <div className="custom-text-input"  >
-                                    <EposTextInputElement type="text" placeholder="User Name" />
-                                </div>
-                                <div className="custom-text-input"  >
-                                    <EposTextInputElement type="password" placeholder="Password" />
-                                </div>                                
-                                <div className="custom-submit-button" style={{
-                                    marginTop: '60px'
-                                }} >
-                                    <button>
-                                        Login
-                                    </button>
-                                </div>
-                                <div className="forgot-password">
-                                    Forgot Password? <a style={{
-                                        textDecoration: 'none'
-                                    }} href="#" >click here</a>
-                                </div>
-                            </div>
-                        </div>
+                       {
+                           this.props.children
+                       }
                     </div>
                 </div>
             </div>
