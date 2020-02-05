@@ -8,9 +8,9 @@ export default () => {
 		<div className="summary-container">
 			<div className="summary-card">
 				<div className="summary-card-header">
-					<img src="img/life-insurance.svg" className="item-image nodrag"/>
+					<img src="img/group-9.svg" className="item-image nodrag"/>
 					<br/>
-					<label className="item-title">Death<br/>(DE)</label>
+					<label className="item-title">LIFE STAGE</label>
 				</div>
 			</div>
 		</div>
